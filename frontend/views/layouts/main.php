@@ -32,6 +32,7 @@ AppAsset::register($this);
     NavBar::begin([
         'brandLabel' => Yii::$app->name,
         'brandUrl' => Yii::$app->homeUrl,
+        // 'brandImage' => 'http://lorempixel.com/50/50/nature',
         'options' => [
             'class' => 'navbar navbar-expand-lg navbar-light fixed-top',
         ],
