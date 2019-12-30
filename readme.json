@@ -1,0 +1,84 @@
+{
+    "simple_CRUD_app": {
+        "meta": {
+            "date_started": 261219,
+            "description": "simple QA engine",
+            "requirements": [
+                "using a DB (using pgSQL)",
+                "do not use Gii",
+                "perform CRUD operations"
+            ],
+            "dir": "/ampps/www/simple-crud-app"
+        }
+
+        "planning": {
+            "yii2-package": "yii2-advanced",
+            "db": "pgSQL",
+            "common": {
+                "controllers": [],
+                "views": {},
+                "tables": {
+                    "question": [
+                        "owner_id | int",
+                        "title | text",
+                        "body | text",
+                        "rating | int",
+                        "timestamp | timestamp"
+						"url_slug | text"
+                    ],
+                    "answer": [
+                        "owner_id | int",
+                        "question_id | int",
+                        "body | text",
+                        "rating | int",
+                        "timestamp | timestamp"
+                    ],
+                    "extendedUser":[
+						"owner_id | int",
+						"about_me | text",
+						"profile_img | URL"
+					]
+                }
+            },
+            "console": {
+                "controllers": [
+                    "SeedController"
+                ],
+                "views": {},
+                "tables": []
+            }
+            "frontend": {
+                "controllers": [
+                    "QuestionController",
+                    "AnswerController"
+                ],
+                "views": {
+                    "Question": [
+                        "index",
+                        "detail",
+                        "create",
+                        "update",
+                        "delete"
+                    ]
+                    "Answer": [
+                        "create",
+                        "update",
+                        "delete"
+                    ]
+                },
+                "tables": []
+            }
+            "backend":
+            "controllers": [
+                "DashboardController"
+            ]
+            "views": {
+                "Dashboard": [
+                    "index",
+                    "update_details",
+                    "question_index",
+                    "answer_index"
+                ]
+            }
+        }
+    }
