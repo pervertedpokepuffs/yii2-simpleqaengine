@@ -4,11 +4,11 @@
 /* @var $content string */
 
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
+use yii\bootstrap4\Nav;
+use yii\bootstrap4\NavBar;
+use yii\bootstrap4\Breadcrumbs;
 use frontend\assets\AppAsset;
-use common\widgets\Alert;
+use yii\bootstrap4\Alert;
 
 AppAsset::register($this);
 ?>
@@ -34,13 +34,11 @@ AppAsset::register($this);
         'brandUrl' => Yii::$app->homeUrl,
         // 'brandImage' => 'http://lorempixel.com/50/50/nature',
         'options' => [
-            'class' => 'navbar navbar-expand-lg navbar-light fixed-top',
+            'class' => 'navbar navbar-expand-lg navbar-light bg-dark sticky-top',
         ],
     ]);
     $menuItems = [
         ['label' => 'Home', 'url' => ['/question/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
@@ -62,11 +60,21 @@ AppAsset::register($this);
     NavBar::end();
     ?>
 
-    <div class="container">
+    <div class="container pt-2">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
-        <?= Alert::widget() ?>
+        <? if ($this->params['alert'] !== NULL) : ?>
+            <div class="container-fluid">
+                <?
+                echo Alert::widget([
+                    'options' => [
+                        'class' => $this->params['alert']['class']
+                    ],
+                    'body' => $this->params['alert']['message']
+                ]) ?>
+            </div>
+        <? endif ?>
         <?= $content ?>
     </div>
 

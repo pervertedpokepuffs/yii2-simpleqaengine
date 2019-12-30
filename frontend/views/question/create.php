@@ -7,11 +7,7 @@ use yii\helpers\Url;
 $this->title = $question['question']['title'];
 $this->params['breadcrumbs'] = [
     [
-        'label' => 'Question: ' . $this->title,
-        'url' => Url::to(['question/view', 'id' => $id])
-    ],
-    [
-        'label' => 'Edit Question'
+        'label' => 'Create Question'
     ]
 ];
 ?>
@@ -28,7 +24,7 @@ $this->params['breadcrumbs'] = [
                         <div class="media-body">
                             <div class="container-fluid">
                                 <? $form = ActiveForm::begin([
-                                    'action' => ['question/edit', 'id' => $id],
+                                    'action' => ['question/create'],
                                     'layout' => 'horizontal'
                                 ]); ?>
                                 <? echo $form->field($model, 'title')->textInput(); ?>

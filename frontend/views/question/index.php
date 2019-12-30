@@ -10,7 +10,7 @@ $this->title = 'Simple QA Engine';
     <?php foreach ($data as $data_item) : ?>
         <div class="container-fluid py-3">
             <div class="card">
-                <div class="container-fluid p-1">
+                <div class="container-fluid p-1 pt-3">
                     <div class="container-fluid">
                         <div class="media justify-content-start">
                             <div class="px-5">
