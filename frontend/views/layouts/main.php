@@ -34,7 +34,7 @@ AppAsset::register($this);
         'brandUrl' => Yii::$app->homeUrl,
         // 'brandImage' => 'http://lorempixel.com/50/50/nature',
         'options' => [
-            'class' => 'navbar navbar-expand-lg navbar-light bg-dark sticky-top',
+            'class' => 'navbar navbar-expand-lg navbar-light bg-light sticky-top',
         ],
     ]);
     $menuItems = [
